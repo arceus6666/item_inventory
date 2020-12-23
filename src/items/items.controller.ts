@@ -29,8 +29,8 @@ export class ItemsController {
     @Body() body,
     @Res() res: Response
   ) {
-    console.log('new')
-    body['image'] = file.originalname;
+    // console.log(file.originalname)
+    body['image'] = file ? file.originalname : 'blank.jpg';
     this.service.create(body).then(data => {
       res.status(201).json(data);
     }, err => {

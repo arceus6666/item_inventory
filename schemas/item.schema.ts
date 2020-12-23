@@ -5,13 +5,22 @@ export type ItemDocument = Item & Document;
 
 @Schema()
 export class Item {
-  @Prop()
+  @Prop({
+    type: String,
+    required: true
+  })
   name: string;
 
-  @Prop()
-  price: number;
+  @Prop({
+    type: String,
+    required: true
+  })
+  price: string;
 
-  @Prop()
+  @Prop({
+    type: String,
+    default: 'blank.jpg'
+  })
   image: string;
 }
 
